@@ -4,12 +4,12 @@
     "C:\\MBAModulo1\\MBAModulo1.MVC\\MBAModulo1.MVC.csproj": {}
   },
   "projects": {
-    "C:\\MBAModulo1\\MBAModulo1.API\\MBAModulo1.csproj": {
+    "C:\\MBAModulo1\\MBAModulo1.API\\MBAModulo1.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MBAModulo1\\MBAModulo1.API\\MBAModulo1.csproj",
-        "projectName": "MBAModulo1",
-        "projectPath": "C:\\MBAModulo1\\MBAModulo1.API\\MBAModulo1.csproj",
+        "projectUniqueName": "C:\\MBAModulo1\\MBAModulo1.API\\MBAModulo1.API.csproj",
+        "projectName": "MBAModulo1.API",
+        "projectPath": "C:\\MBAModulo1\\MBAModulo1.API\\MBAModulo1.API.csproj",
         "packagesPath": "C:\\Users\\Jmolaz\\.nuget\\packages\\",
         "outputPath": "C:\\MBAModulo1\\MBAModulo1.API\\obj\\",
         "projectStyle": "PackageReference",
@@ -181,8 +181,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\MBAModulo1\\MBAModulo1.API\\MBAModulo1.csproj": {
-                "projectPath": "C:\\MBAModulo1\\MBAModulo1.API\\MBAModulo1.csproj"
+              "C:\\MBAModulo1\\MBAModulo1.API\\MBAModulo1.API.csproj": {
+                "projectPath": "C:\\MBAModulo1\\MBAModulo1.API\\MBAModulo1.API.csproj"
               },
               "C:\\MBAModulo1\\MBAModulo1.Core\\MBAModulo1.Core.csproj": {
                 "projectPath": "C:\\MBAModulo1\\MBAModulo1.Core\\MBAModulo1.Core.csproj"

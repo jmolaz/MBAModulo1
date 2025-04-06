@@ -1,15 +1,15 @@
 {
   "Version": 1,
-  "Hash": "v4cErkYkhfgMMCEDeU/tX7K+9GjV2oncXER13YNVrRo=",
+  "Hash": "G+ZzVyT/wB/u+8YmNy8w0n+igGcIlMupLFN55GpVf6U=",
   "Source": "MBAModulo1.MVC",
   "BasePath": "_content/MBAModulo1.MVC",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\MBAModulo1\\MBAModulo1.API\\MBAModulo1.csproj",
+      "Identity": "C:\\MBAModulo1\\MBAModulo1.API\\MBAModulo1.API.csproj",
       "Version": 2,
-      "Source": "MBAModulo1",
+      "Source": "MBAModulo1.API",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
       "AdditionalPublishProperties": "",
       "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",

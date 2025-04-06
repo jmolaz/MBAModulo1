@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "MBAModulo1/1.0.0": {
+      "MBAModulo1.API/1.0.0": {
         "dependencies": {
           "MBAModulo1.Core": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
@@ -18,7 +18,7 @@
           "Swashbuckle.AspNetCore": "6.6.2"
         },
         "runtime": {
-          "MBAModulo1.dll": {}
+          "MBAModulo1.API.dll": {}
         }
       },
       "Humanizer.Core/2.14.1": {
@@ -1008,7 +1008,7 @@
     }
   },
   "libraries": {
-    "MBAModulo1/1.0.0": {
+    "MBAModulo1.API/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

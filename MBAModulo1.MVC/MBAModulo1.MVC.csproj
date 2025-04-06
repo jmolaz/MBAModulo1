@@ -9,7 +9,7 @@
   
   <ItemGroup>
     <ProjectReference Include="..\MBAModulo1.Core\MBAModulo1.Core.csproj" />
-    <ProjectReference Include="..\MBAModulo1.API\MBAModulo1.csproj" />
+    <ProjectReference Include="..\MBAModulo1.API\MBAModulo1.API.csproj" />
   </ItemGroup>
 
   
