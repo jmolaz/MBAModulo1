@@ -1,4 +1,4 @@
-@MBAModulo1_HostAddress = http://localhost:5194
+@MBAModulo1_HostAddress = http://localhost:5058
 
 GET {{MBAModulo1_HostAddress}}/weatherforecast/
 Accept: application/json
