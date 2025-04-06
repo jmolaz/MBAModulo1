@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MBAModulo1.props" />
+</Project>
