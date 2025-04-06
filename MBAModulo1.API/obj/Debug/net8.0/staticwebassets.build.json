@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "PFe0v2zRTHC+OLW7j/+8XyZDVlpjydQidftTT3/Mt0c=",
-  "Source": "MBAModulo1",
-  "BasePath": "_content/MBAModulo1",
+  "Hash": "LPMsAX4xHoViYcCBkSirDBKn8Sf4MbOBm7cl/oQIAmo=",
+  "Source": "MBAModulo1.API",
+  "BasePath": "_content/MBAModulo1.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
