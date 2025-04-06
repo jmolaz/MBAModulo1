@@ -1,25 +1,33 @@
 using MBAMODULO1.Models;
-using MBAMODULO1.Data; // Aqui está o AppDbContext
+using MBAMODULO1.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configurar o banco de dados com AppDbContext
+// Banco de dados
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Configurar o Identity com a classe Vendedor
+// Identity
 builder.Services.AddIdentity<Vendedor, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
-// Adiciona suporte a controllers e views
+// ✅ Configurar cookies para login via formulário
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Account/Login";
+    options.LogoutPath = "/Account/Logout";
+    options.AccessDeniedPath = "/Account/AccessDenied";
+});
+
+// ✅ Habilita suporte a MVC com Views (essencial para Razor funcionar)
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-// Configure o pipeline de requisição HTTP
+// Middleware
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -31,13 +39,12 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-// Essas linhas ativam autenticação e autorização
-app.UseAuthentication();
+app.UseAuthentication(); 
 app.UseAuthorization();
 
-// Define a rota padrão do MVC
+// ✅ Rota padrão: vai direto para Account/Login
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Account}/{action=Login}/{id?}");
 
 app.Run();

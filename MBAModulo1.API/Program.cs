@@ -40,10 +40,7 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-builder.Services.AddControllers(options =>
-{
-    options.Filters.Add(new Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter());
-});
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

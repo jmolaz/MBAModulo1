@@ -1,13 +1,25 @@
-
 @model MBAMODULO1.Models.LoginViewModel
 
 @{
     ViewData["Title"] = "Login";
 }
 
-<h2>Login</h2>
+<h2>Loginnn Pasta Account</h2>
+
+<!-- Exibir mensagens de erro do servidor -->
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+        {
+            <p>@error.ErrorMessage</p>
+        }
+    </div>
+}
 
 <form asp-action="Login" method="post">
+    @Html.AntiForgeryToken()
+
     <div class="form-group">
         <label asp-for="Email"></label>
         <input asp-for="Email" class="form-control" />
@@ -16,9 +28,15 @@
 
     <div class="form-group">
         <label asp-for="Senha"></label>
-        <input asp-for="Senha" class="form-control" type="password" />
+        <input type="password" asp-for="Senha" class="form-control" />
         <span asp-validation-for="Senha" class="text-danger"></span>
     </div>
 
     <button type="submit" class="btn btn-primary">Entrar</button>
 </form>
+
+
+<!-- Scripts para validação client-side -->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
