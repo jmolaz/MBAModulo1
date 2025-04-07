@@ -11,7 +11,7 @@ namespace MBAMODULO1.Controllers
         [Authorize]
         public IActionResult GetMensagemSecreta()
         {
-            return Ok("🔒 Acesso autorizado! Você está autenticado com JWT.");
+            return Ok("Acesso autorizado");
         }
     }
 }
