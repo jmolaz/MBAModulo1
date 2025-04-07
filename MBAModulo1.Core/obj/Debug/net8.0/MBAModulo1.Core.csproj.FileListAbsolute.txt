@@ -1,0 +1,12 @@
+C:\MBAModulo1\MBAModulo1.Core\bin\Debug\net8.0\MBAModulo1.Core.deps.json
+C:\MBAModulo1\MBAModulo1.Core\bin\Debug\net8.0\MBAModulo1.Core.dll
+C:\MBAModulo1\MBAModulo1.Core\bin\Debug\net8.0\MBAModulo1.Core.pdb
+C:\MBAModulo1\MBAModulo1.Core\obj\Debug\net8.0\MBAModulo1.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\MBAModulo1\MBAModulo1.Core\obj\Debug\net8.0\MBAModulo1.Core.AssemblyInfoInputs.cache
+C:\MBAModulo1\MBAModulo1.Core\obj\Debug\net8.0\MBAModulo1.Core.AssemblyInfo.cs
+C:\MBAModulo1\MBAModulo1.Core\obj\Debug\net8.0\MBAModulo1.Core.csproj.CoreCompileInputs.cache
+C:\MBAModulo1\MBAModulo1.Core\obj\Debug\net8.0\MBAModulo1.Core.sourcelink.json
+C:\MBAModulo1\MBAModulo1.Core\obj\Debug\net8.0\MBAModulo1.Core.dll
+C:\MBAModulo1\MBAModulo1.Core\obj\Debug\net8.0\refint\MBAModulo1.Core.dll
+C:\MBAModulo1\MBAModulo1.Core\obj\Debug\net8.0\MBAModulo1.Core.pdb
+C:\MBAModulo1\MBAModulo1.Core\obj\Debug\net8.0\ref\MBAModulo1.Core.dll
