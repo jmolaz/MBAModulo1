@@ -11,3 +11,5 @@ C:\MBAModulo1\MBAModulo1.Core\obj\Debug\net9.0\MBAModulo1.Core.dll
 C:\MBAModulo1\MBAModulo1.Core\obj\Debug\net9.0\refint\MBAModulo1.Core.dll
 C:\MBAModulo1\MBAModulo1.Core\obj\Debug\net9.0\MBAModulo1.Core.pdb
 C:\MBAModulo1\MBAModulo1.Core\obj\Debug\net9.0\ref\MBAModulo1.Core.dll
+C:\MBAModulo1\MBAModulo1.Core\bin\Debug\net9.0\MBAModulo1.Core.runtimeconfig.json
+C:\MBAModulo1\MBAModulo1.Core\obj\Debug\net9.0\MBAModulo1.Core.genruntimeconfig.cache

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MBAModulo1.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e78d6ccac4ecb3abbffc3f66c4742860468ffd47")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+639a2a3d04cd8752d0bf523be0e60d04950f92a3")]
 [assembly: System.Reflection.AssemblyProductAttribute("MBAModulo1.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MBAModulo1.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
