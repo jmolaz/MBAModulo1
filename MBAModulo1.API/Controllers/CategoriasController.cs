@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MBAMODULO1.Data;
-using MBAMODULO1.Models;
+using MBAModulo1.Core.Data;
+using MBAModulo1.Core.Models;
 
-namespace MBAMODULO1.Controllers
+namespace MBAModulo1.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

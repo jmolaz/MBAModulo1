@@ -1,9 +1,11 @@
-namespace MBAMODULO1.Models
+using MBAModulo1.Core.Models;
+
+namespace MBAModulo1.Core.Models
 {
     public class Produto
     {
         public int Id { get; set; }
-        public string Nome { get; set; }
+        public string? Nome { get; set; }
         public decimal Preco { get; set; }
 
         public int CategoriaId { get; set; }

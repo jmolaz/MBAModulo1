@@ -1,18 +1,18 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using MBAMODULO1.Data;
-using MBAMODULO1.Models;
+using MBAModulo1.Core.Data;  // Usando a camada Core
+using MBAModulo1.Core.Models;  // Seus modelos de dados
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Conexão com SQLite
+// Configuração do DbContext para a API
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Configurar Identity
+// Configuração do Identity
 builder.Services.AddIdentity<Vendedor, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
@@ -53,11 +53,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-// Habilitar a autenticação e autorização globalmente
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

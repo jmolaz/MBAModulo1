@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MBAMODULO1.Controllers
+namespace MBAModulo1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
