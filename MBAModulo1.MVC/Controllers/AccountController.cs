@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using MBAMODULO1.Models;
+using MBAModulo1.Core.Models;
 using System.Threading.Tasks;
 using System;
 

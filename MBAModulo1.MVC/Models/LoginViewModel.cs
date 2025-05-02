@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MBAMODULO1.Models
+namespace MBAModulo1.Core.Models
 {
     public class LoginViewModel
     {

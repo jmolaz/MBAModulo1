@@ -1,5 +1,5 @@
-using MBAMODULO1.Models;
-using MBAMODULO1.Data;
+using MBAModulo1.Core.Data;
+using MBAModulo1.Core.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
