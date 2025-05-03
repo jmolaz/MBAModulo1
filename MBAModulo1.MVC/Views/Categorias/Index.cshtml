@@ -1,0 +1,31 @@
+@model IEnumerable<MBAModulo1.Core.Models.Categoria>
+
+@{
+    ViewData["Title"] = "Lista de Categorias";
+    Layout = "_Layout";
+}
+
+<h2>Categorias</h2>
+
+<a class="btn btn-primary mb-3" asp-action="Create">Nova Categoria</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var categoria in Model)
+        {
+            <tr>
+                <td>@categoria.Nome</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@categoria.Id" class="btn btn-sm btn-warning">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@categoria.Id" class="btn btn-sm btn-danger">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,109 +1,93 @@
 using Microsoft.AspNetCore.Mvc;
-using MBAModulo1.Core.Models;
-using MBAModulo1.Core.Data;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using MBAModulo1.Core.Data;
+using MBAModulo1.Core.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Threading.Tasks;
+using System.Linq;
 
-namespace MBAMODULO1.MVC.Controllers
+namespace MBAModulo1.MVC.Controllers
 {
-  public class ProdutosController : Controller
-{
-    private readonly AppDbContext _context;
-
-    public ProdutosController(AppDbContext context)
+    public class ProdutosController : Controller
     {
-        _context = context;
-    }
+        private readonly AppDbContext _context;
 
-    // Index para listar produtos
-    public IActionResult Index()
-    {
-        var produtos = _context.Produtos.ToList();
-        return View(produtos);
-    }
-
-    // Novo Produto
-    public IActionResult Create()
-    {
-        return View();
-    }
-
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(Produto produto)
-    {
-        if (ModelState.IsValid)
+        public ProdutosController(AppDbContext context)
         {
-            _context.Add(produto);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-        return View(produto);
-    }
-
-    // Editar Produto
-    public IActionResult Edit(int id)
-    {
-        var produto = _context.Produtos.Find(id);
-        if (produto == null)
-        {
-            return NotFound();
-        }
-        return View(produto);
-    }
-
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, Produto produto)
-    {
-        if (id != produto.Id)
-        {
-            return NotFound();
+            _context = context;
         }
 
-        if (ModelState.IsValid)
+        // GET: Produtos
+        public async Task<IActionResult> Index()
         {
-            try
+            var produtos = await _context.Produtos
+                .Include(p => p.Categoria)
+                .ToListAsync();
+            return View(produtos);
+        }
+
+        // GET: Produtos/Create
+        public IActionResult Create()
+        {
+            ViewBag.Categorias = new SelectList(_context.Categorias, "Id", "Nome");
+            return View();
+        }
+
+        // POST: Produtos/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Produto produto)
+        {
+            if (ModelState.IsValid)
             {
-                _context.Update(produto);
+                _context.Add(produto);
                 await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
             }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!_context.Produtos.Any(p => p.Id == produto.Id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-            return RedirectToAction(nameof(Index));
-        }
-        return View(produto);
-    }
 
-    // Excluir Produto
-    public IActionResult Delete(int id)
-    {
-        var produto = _context.Produtos.Find(id);
-        if (produto == null)
+            ViewBag.Categorias = new SelectList(_context.Categorias, "Id", "Nome", produto.CategoriaId);
+            return View(produto);
+        }
+
+        // GET: Produtos/Edit/5
+        public async Task<IActionResult> Edit(int? id)
         {
-            return NotFound();
+            if (id == null) return NotFound();
+
+            var produto = await _context.Produtos.FindAsync(id);
+            if (produto == null) return NotFound();
+
+            ViewBag.Categorias = new SelectList(_context.Categorias, "Id", "Nome", produto.CategoriaId);
+            return View(produto);
         }
-        return View(produto);
-    }
 
-    [HttpPost, ActionName("Delete")]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(int id)
-    {
-        var produto = _context.Produtos.Find(id);
-        _context.Produtos.Remove(produto);
-        await _context.SaveChangesAsync();
-        return RedirectToAction(nameof(Index));
-    }
-}
+        // POST: Produtos/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, Produto produto)
+        {
+            if (id != produto.Id) return NotFound();
 
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(produto);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!_context.Produtos.Any(p => p.Id == id))
+                        return NotFound();
+                    else
+                        throw;
+                }
+
+                return RedirectToAction(nameof(Index));
+            }
+
+            ViewBag.Categorias = new SelectList(_context.Categorias, "Id", "Nome", produto.CategoriaId);
+            return View(produto);
+        }
+    }
 }

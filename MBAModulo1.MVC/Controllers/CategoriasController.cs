@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using MBAModulo1.Core.Models;
 using MBAModulo1.Core.Data;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 
 namespace MBAMODULO1.MVC.Controllers
 {
@@ -15,37 +13,26 @@ namespace MBAMODULO1.MVC.Controllers
             _context = context;
         }
 
-        // Novo Categoria
+        // Ação para criar uma nova categoria
         public IActionResult Create()
         {
             return View();
         }
 
-        // Editar Categoria
-        public IActionResult Edit(int id)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Categoria categoria)
         {
-            var categoria = _context.Categorias.Find(id);
-            if (categoria == null)
+            if (ModelState.IsValid)
             {
-                return NotFound();
+                _context.Categorias.Add(categoria);  // Adiciona a nova categoria
+                await _context.SaveChangesAsync();    // Salva no banco de dados
+                return RedirectToAction(nameof(Index));  // Redireciona para a lista de categorias
             }
             return View(categoria);
         }
 
-        // Excluir Categoria
-        public IActionResult Delete(int id)
-        {
-            var categoria = _context.Categorias.Find(id);
-            if (categoria == null)
-            {
-                return NotFound();
-            }
-            _context.Categorias.Remove(categoria);
-            _context.SaveChanges();
-            return RedirectToAction(nameof(Index));
-        }
-
-        // Index para exibir a lista de categorias
+        // Index para exibir todas as categorias
         public IActionResult Index()
         {
             var categorias = _context.Categorias.ToList();
