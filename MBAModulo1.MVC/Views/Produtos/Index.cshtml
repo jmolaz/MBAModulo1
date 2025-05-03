@@ -1,0 +1,31 @@
+@model IEnumerable<MBAModulo1.Core.Models.Produto>
+
+@{
+    ViewData["Title"] = "Lista de Produtos";
+}
+
+@{
+    Layout = "_Layout";
+}
+
+<h2>Produtos</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Categoria</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var produto in Model)
+        {
+            <tr>
+                <td>@produto.Nome</td>
+                <td>@produto.Preco.ToString("C")</td>
+                <td>@produto.Categoria?.Nome</td>
+            </tr>
+        }
+    </tbody>
+</table>

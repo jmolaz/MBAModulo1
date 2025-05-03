@@ -59,7 +59,7 @@ namespace MBAMODULO1.MVC.Controllers
             if (result.Succeeded)
             {
                 Console.WriteLine("Login bem-sucedido");
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Produtos");
             }
 
             Console.WriteLine("Login falhou:");

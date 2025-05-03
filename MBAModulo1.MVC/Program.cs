@@ -14,7 +14,7 @@ builder.Services.AddIdentity<Vendedor, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
-// ✅ Configurar cookies para login via formulário
+// Configurar cookies para login via formulário
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/Account/Login";
@@ -22,7 +22,7 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.AccessDeniedPath = "/Account/AccessDenied";
 });
 
-// ✅ Habilita suporte a MVC com Views (essencial para Razor funcionar)
+// Habilita suporte a MVC com Views (essencial para Razor funcionar)
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -42,7 +42,7 @@ app.UseRouting();
 app.UseAuthentication(); 
 app.UseAuthorization();
 
-// ✅ Rota padrão: vai direto para Account/Login
+//  Account/Login
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Account}/{action=Login}/{id?}");
