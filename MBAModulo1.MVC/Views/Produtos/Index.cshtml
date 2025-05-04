@@ -12,6 +12,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
+            <th>Imagem</th> <!-- nova coluna -->
             <th>Nome</th>
             <th>Preço</th>
             <th>Categoria</th>
@@ -22,6 +23,16 @@
         @foreach (var produto in Model)
         {
             <tr>
+                <td>
+                    @if (!string.IsNullOrEmpty(produto.Imagem))
+                    {
+                        <img src="@produto.Imagem" alt="Imagem do produto" style="max-height: 80px;" />
+                    }
+                    else
+                    {
+                        <span>Sem imagem</span>
+                    }
+                </td>
                 <td>@produto.Nome</td>
                 <td>@produto.Preco.ToString("C")</td>
                 <td>@produto.Categoria?.Nome</td>
@@ -33,4 +44,3 @@
         }
     </tbody>
 </table>
-

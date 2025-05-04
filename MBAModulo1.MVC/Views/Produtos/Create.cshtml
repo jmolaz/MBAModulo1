@@ -11,7 +11,7 @@
         <div class="col-md-6">
             <h1 class="mb-4">Novo Produto</h1>
 
-            <form asp-action="Create" method="post">
+            <form asp-action="Create" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label asp-for="Nome" class="control-label"></label>
                     <input asp-for="Nome" class="form-control" />
@@ -31,7 +31,10 @@
                     </select>
                     <span asp-validation-for="CategoriaId" class="text-danger"></span>
                 </div>
-
+                <div class="form-group">
+                    <label asp-for="Imagem" class="control-label">Imagem</label>
+                    <input type="file" name="imagem" class="form-control" />
+                </div>
                 <div class="form-group mt-3">
                     <button type="submit" class="btn btn-primary">Salvar</button>
                     <a href="@Url.Action("Index", "Produtos")" class="btn btn-secondary">Cancelar</a>
@@ -43,5 +46,7 @@
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

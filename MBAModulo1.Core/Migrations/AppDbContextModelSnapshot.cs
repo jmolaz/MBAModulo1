@@ -24,6 +24,7 @@ namespace MBAModulo1.Core.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Nome")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -40,7 +41,11 @@ namespace MBAModulo1.Core.Migrations
                     b.Property<int>("CategoriaId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Imagem")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Nome")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("Preco")

@@ -5,6 +5,38 @@
       "PackagePath": "staticwebassets\\MBAModulo1.MVC.uwdadeh3cr.bundle.scp.css"
     },
     {
+      "Id": "C:\\MBAModulo1\\MBAModulo1.MVC\\wwwroot\\ImagensProdutos\\2801d2f2-bedb-49d1-ba1d-6d27cf976d3a.jpg",
+      "PackagePath": "staticwebassets\\ImagensProdutos\\2801d2f2-bedb-49d1-ba1d-6d27cf976d3a.jpg"
+    },
+    {
+      "Id": "C:\\MBAModulo1\\MBAModulo1.MVC\\wwwroot\\ImagensProdutos\\34e91984-017c-4acb-8231-a8340ab0251e.png",
+      "PackagePath": "staticwebassets\\ImagensProdutos\\34e91984-017c-4acb-8231-a8340ab0251e.png"
+    },
+    {
+      "Id": "C:\\MBAModulo1\\MBAModulo1.MVC\\wwwroot\\ImagensProdutos\\49b04f3f-82f1-4f6b-b855-53a08f742a8e.BMP",
+      "PackagePath": "staticwebassets\\ImagensProdutos\\49b04f3f-82f1-4f6b-b855-53a08f742a8e.BMP"
+    },
+    {
+      "Id": "C:\\MBAModulo1\\MBAModulo1.MVC\\wwwroot\\ImagensProdutos\\5d61685e-aa6b-43b2-a778-f8df05d101a6.jpg",
+      "PackagePath": "staticwebassets\\ImagensProdutos\\5d61685e-aa6b-43b2-a778-f8df05d101a6.jpg"
+    },
+    {
+      "Id": "C:\\MBAModulo1\\MBAModulo1.MVC\\wwwroot\\ImagensProdutos\\8857a46c-b049-4439-b35b-1150ac846d65.jpg",
+      "PackagePath": "staticwebassets\\ImagensProdutos\\8857a46c-b049-4439-b35b-1150ac846d65.jpg"
+    },
+    {
+      "Id": "C:\\MBAModulo1\\MBAModulo1.MVC\\wwwroot\\ImagensProdutos\\bad9d423-0306-460d-9ab5-203195e6e854.BMP",
+      "PackagePath": "staticwebassets\\ImagensProdutos\\bad9d423-0306-460d-9ab5-203195e6e854.BMP"
+    },
+    {
+      "Id": "C:\\MBAModulo1\\MBAModulo1.MVC\\wwwroot\\ImagensProdutos\\ccd012b9-eddd-4d5a-99d2-c98b16486caf.jpg",
+      "PackagePath": "staticwebassets\\ImagensProdutos\\ccd012b9-eddd-4d5a-99d2-c98b16486caf.jpg"
+    },
+    {
+      "Id": "C:\\MBAModulo1\\MBAModulo1.MVC\\wwwroot\\ImagensProdutos\\f3a962a1-8f76-4027-8e6f-2069add32406.BMP",
+      "PackagePath": "staticwebassets\\ImagensProdutos\\f3a962a1-8f76-4027-8e6f-2069add32406.BMP"
+    },
+    {
       "Id": "C:\\MBAModulo1\\MBAModulo1.MVC\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

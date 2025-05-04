@@ -36,44 +36,48 @@ namespace MBAModulo1.MVC.Controllers
             return View();
         }
 
-        // POST: Produtos/Create
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Produto produto)
+        public async Task<IActionResult> Create(Produto produto, IFormFile imagem)
         {
-            var categoriaExiste = await _context.Categorias.AnyAsync(c => c.Id == produto.CategoriaId);
-            if (!categoriaExiste)
+            if (imagem != null && imagem.Length > 0)
             {
-                ModelState.AddModelError("CategoriaId", "Categoria selecionada não existe.");
+                // Gerar um nome único para o arquivo da imagem
+                var nomeArquivo = Guid.NewGuid().ToString() + Path.GetExtension(imagem.FileName);
+
+                // Caminho completo para salvar a imagem
+                var caminhoImagem = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "ImagensProdutos", nomeArquivo);
+
+                // Salvar o arquivo na pasta
+                using (var stream = new FileStream(caminhoImagem, FileMode.Create))
+                {
+                    await imagem.CopyToAsync(stream);
+                }
+
+                // Atribuir o caminho completo da imagem ao produto
+                produto.Imagem = "/ImagensProdutos/" + nomeArquivo; // Caminho relativo
             }
 
-            if (ModelState.IsValid)
+            // Salvar ou atualizar o produto no banco de dados
+            if (produto.Id == 0)
             {
+                // Criar um novo produto
                 _context.Add(produto);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                // Atualizar um produto existente
+                _context.Update(produto);
             }
 
-            ViewBag.Categorias = new SelectList(_context.Categorias, "Id", "Nome", produto.CategoriaId);
-            return View(produto);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
-        // GET: Produtos/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null) return NotFound();
-
-            var produto = await _context.Produtos.FindAsync(id);
-            if (produto == null) return NotFound();
-
-            ViewBag.Categorias = new SelectList(_context.Categorias, "Id", "Nome", produto.CategoriaId);
-            return View(produto);
-        }
-
-        // POST: Produtos/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, Produto produto)
+        public async Task<IActionResult> Edit(int id, Produto produto, IFormFile imagem)
         {
             if (id != produto.Id) return NotFound();
 
@@ -87,6 +91,26 @@ namespace MBAModulo1.MVC.Controllers
             {
                 try
                 {
+                    if (imagem != null && imagem.Length > 0)
+                    {
+                        // Gerar um nome único para o arquivo da imagem
+                        var nomeArquivo = Guid.NewGuid().ToString() + Path.GetExtension(imagem.FileName);
+
+                        // Caminho completo para salvar a imagem
+                        var caminhoImagem = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "ImagensProdutos", nomeArquivo);
+
+                        Console.WriteLine(caminhoImagem);
+
+                        // Salvar o arquivo na pasta
+                        using (var stream = new FileStream(caminhoImagem, FileMode.Create))
+                        {
+                            await imagem.CopyToAsync(stream);
+                        }
+
+                        // Atribuir o caminho completo da imagem ao produto
+                        produto.Imagem = "/ImagensProdutos/" + nomeArquivo;
+                    }
+
                     _context.Update(produto);
                     await _context.SaveChangesAsync();
                 }
@@ -104,6 +128,7 @@ namespace MBAModulo1.MVC.Controllers
             ViewBag.Categorias = new SelectList(_context.Categorias, "Id", "Nome", produto.CategoriaId);
             return View(produto);
         }
+
 
         // GET: Produtos/Delete/5
         public async Task<IActionResult> Delete(int? id)
