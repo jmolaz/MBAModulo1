@@ -10,7 +10,7 @@ Este projeto é uma aplicação web que utiliza ASP.NET Core, Entity Framework C
 
 1. Clone o repositório:
    ```bash
-   git clone https://seu-repositorio.git
+   git clone https://github.com/jmolaz/MBAModulo1.git
 2. Navegue até a pasta do projeto
     cd MBAModulo1
 3. Restaure as dependências:
