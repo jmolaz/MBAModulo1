@@ -84,27 +84,14 @@ namespace MBAMODULO1.MVC.Controllers
         {
             if (id == null) return NotFound();
 
-            var categoria = await _context.Categorias
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var categoria = await _context.Categorias.FindAsync(id);
             if (categoria == null) return NotFound();
 
-            return View(categoria);
-        }
+            _context.Categorias.Remove(categoria);
+            await _context.SaveChangesAsync();
 
-        // POST: Categorias/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var categoria = await _context.Categorias.FindAsync(id);
-            if (categoria != null)
-            {
-                _context.Categorias.Remove(categoria);
-                await _context.SaveChangesAsync();
-            }
             return RedirectToAction(nameof(Index));
         }
-
         private bool CategoriaExists(int id)
         {
             return _context.Categorias.Any(e => e.Id == id);
