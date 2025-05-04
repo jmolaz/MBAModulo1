@@ -82,6 +82,7 @@ namespace MBAMODULO1.MVC.Controllers
         }
 
         // GET: Categorias/Delete/5
+        // GET: Categorias/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
@@ -89,11 +90,24 @@ namespace MBAMODULO1.MVC.Controllers
             var categoria = await _context.Categorias.FindAsync(id);
             if (categoria == null) return NotFound();
 
+            // Verifica se há produtos associados a essa categoria
+            bool possuiProdutos = await _context.Produtos.AnyAsync(p => p.CategoriaId == id);
+
+            if (possuiProdutos)
+            {
+                TempData["Erro"] = "Não é possível excluir a categoria, pois ela está vinculada a produtos.";
+                return RedirectToAction(nameof(Index));
+            }
+
             _context.Categorias.Remove(categoria);
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
         }
+
+
+        // Confirma se a Categoria não está vinculada a um produto
+
         private bool CategoriaExists(int id)
         {
             return _context.Categorias.Any(e => e.Id == id);
