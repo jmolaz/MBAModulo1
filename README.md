@@ -82,12 +82,12 @@ A estrutura do projeto é organizada da seguinte forma:
 - **Email:** teste@teste.com.br  
 - **Senha:** T123@abc
 
-- cd src/Blog.Mvc/
+- cd MBAMODULO1/MBAModulo1.MVC/
 - dotnet run
 - Acesse a aplicação em: http://localhost:5112
 - Executar a API:
 
-- cd src/Blog.Api/
+- cd MBAMODULO1/MBAModulo1.API/
 - dotnet run
 - Acesse a documentação da API em: http://localhost:5058/swagger/index.html 
 
