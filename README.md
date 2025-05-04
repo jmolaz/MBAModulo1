@@ -52,9 +52,25 @@ A estrutura do projeto é organizada da seguinte forma:
 - **Core**: Contém a lógica central do projeto.
 - **MVC**: Interface do usuário para interagir com a API.
 
-## 5. Como Executar o Projeto
+## 5. Funcionalidades Implementadas
 
-   Clone o Repositório:
+- CRUD de Produtos e Categorias
+- Registro e Login de usuários com Identity
+- Controle de acesso por perfil (admin e vendedor)
+- Comunicação entre MVC e API com HttpClient
+- Documentação Swagger da API
+
+## 6. Como Executar o Projeto
+
+### Pré-requisitos
+
+- .NET SDK 9.0 ou superior
+- Visual Studio 2022 ou superior (ou qualquer IDE de sua preferência)
+- Git
+
+### Executando o Projeto
+
+ Clone o Repositório:
 
 - git clone https://github.com/jmolaz/MBAModulo1.git
 - cd nome-do-repositorio
@@ -74,7 +90,5 @@ A estrutura do projeto é organizada da seguinte forma:
 - cd src/Blog.Api/
 - dotnet run
 - Acesse a documentação da API em: http://localhost:5058/swagger/index.html 
-
-
 
 
