@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MBAModulo1.Core.Models;
 using System.Threading.Tasks;
-using System;
+using System.Linq;
 
 namespace MBAMODULO1.MVC.Controllers
 {
@@ -18,29 +18,19 @@ namespace MBAMODULO1.MVC.Controllers
         }
 
         // GET: /Account/Login
-       [HttpGet]
-       public IActionResult Login()
+        [HttpGet]
+        public IActionResult Login()
         {
             return View();
         }
+
         // POST: /Account/Login
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
-            Console.WriteLine("Email recebido: " + model.Email);
-            Console.WriteLine("Senha recebida: " + model.Senha);    
-            Console.WriteLine("Tentando logar...");
-            Console.WriteLine($"Email: {model.Email}");
-            Console.WriteLine($"Senha: {(string.IsNullOrEmpty(model.Senha) ? "vazia" : "****")}");
-
             if (!ModelState.IsValid)
             {
-                Console.WriteLine("ModelState inválido:");
-                foreach (var e in ModelState.Values.SelectMany(v => v.Errors))
-                {
-                    Console.WriteLine($" - {e.ErrorMessage}");
-                }
                 return View(model);
             }
 
@@ -48,7 +38,6 @@ namespace MBAMODULO1.MVC.Controllers
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null)
             {
-                Console.WriteLine("Usuário não encontrado");
                 ModelState.AddModelError(string.Empty, "Usuário ou senha inválidos.");
                 return View(model);
             }
@@ -58,27 +47,25 @@ namespace MBAMODULO1.MVC.Controllers
 
             if (result.Succeeded)
             {
-                Console.WriteLine("Login bem-sucedido");
                 return RedirectToAction("Index", "Produtos");
             }
-
-            Console.WriteLine("Login falhou:");
-            Console.WriteLine($" - LockedOut: {result.IsLockedOut}");
-            Console.WriteLine($" - NotAllowed: {result.IsNotAllowed}");
-            Console.WriteLine($" - Requires2FA: {result.RequiresTwoFactor}");
 
             ModelState.AddModelError(string.Empty, "Login inválido. Verifique seu e-mail e senha.");
             return View(model);
         }
 
         // POST: /Account/Logout
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpGet]
         public async Task<IActionResult> Logout()
         {
-            Console.WriteLine("Realizando logout...");
+            Response.Cookies.Delete(".AspNetCore.Cookies");    
+            
+            // Usar SignInManager para fazer o logout
             await _signInManager.SignOutAsync();
+
+            // Redirecionar o usuário para a página de login após o logout
             return RedirectToAction("Login", "Account");
         }
+
     }
 }

@@ -2,9 +2,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MBAModulo1.Core.Models;
 using MBAModulo1.Core.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MBAMODULO1.MVC.Controllers
 {
+    [Authorize]
     public class CategoriasController : Controller
     {
         private readonly AppDbContext _context;

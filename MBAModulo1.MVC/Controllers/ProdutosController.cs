@@ -5,9 +5,12 @@ using MBAModulo1.Core.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Threading.Tasks;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace MBAModulo1.MVC.Controllers
 {
+    [Authorize]
     public class ProdutosController : Controller
     {
         private readonly AppDbContext _context;
