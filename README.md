@@ -20,4 +20,12 @@ Este projeto é uma aplicação web que utiliza ASP.NET Core, Entity Framework C
 5. Execute o MVC:
     dotnet run --project MBAModulo1.MVC
 
+
+# Usuário padrão
+
+Ao clonar o projeto, o banco de dados já está incluído. Você pode usar as seguintes credenciais para acessar:
+
+- **Email:** teste@teste.com.br  
+- **Senha:** T123@abc
+
 OBS.: Caso haja a necessidades execute em terminais multiplos
