@@ -38,6 +38,12 @@ namespace MBAModulo1.MVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Produto produto)
         {
+            var categoriaExiste = await _context.Categorias.AnyAsync(c => c.Id == produto.CategoriaId);
+            if (!categoriaExiste)
+            {
+                ModelState.AddModelError("CategoriaId", "Categoria selecionada não existe.");
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(produto);
@@ -68,6 +74,12 @@ namespace MBAModulo1.MVC.Controllers
         {
             if (id != produto.Id) return NotFound();
 
+            var categoriaExiste = await _context.Categorias.AnyAsync(c => c.Id == produto.CategoriaId);
+            if (!categoriaExiste)
+            {
+                ModelState.AddModelError("CategoriaId", "Categoria selecionada não existe.");
+            }
+
             if (ModelState.IsValid)
             {
                 try
@@ -89,12 +101,16 @@ namespace MBAModulo1.MVC.Controllers
             ViewBag.Categorias = new SelectList(_context.Categorias, "Id", "Nome", produto.CategoriaId);
             return View(produto);
         }
-        // GET: /Delete
+
+        // GET: Produtos/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
 
-            var produto = await _context.Produtos.FindAsync(id);
+            var produto = await _context.Produtos
+                .Include(p => p.Categoria)
+                .FirstOrDefaultAsync(p => p.Id == id);
+
             if (produto == null) return NotFound();
 
             _context.Produtos.Remove(produto);
