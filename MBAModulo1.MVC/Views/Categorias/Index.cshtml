@@ -23,7 +23,7 @@
                 <td>@categoria.Nome</td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@categoria.Id" class="btn btn-sm btn-primary">Alterar</a>
-                    <a asp-action="Delete" asp-route-id="@categoria.Id" class="btn btn-sm btn-danger">Excluir</a>
+                    <a asp-action="Delete" asp-route-id="@categoria.Id" class="btn btn-sm btn-danger" onclick="return confirm('Tem certeza que deseja excluir esta Categoria?');">Excluir</a>
                 </td>
             </tr>
         }

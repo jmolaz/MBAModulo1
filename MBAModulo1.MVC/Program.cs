@@ -2,6 +2,9 @@ using MBAModulo1.Core.Data;
 using MBAModulo1.Core.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Localization;
+using System.Globalization;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +23,15 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.LoginPath = "/Account/Login";
     options.LogoutPath = "/Account/Logout";
     options.AccessDeniedPath = "/Account/AccessDenied";
+});
+
+//Deixar em Português
+var supportedCultures = new[] { new CultureInfo("pt-BR") };
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    options.DefaultRequestCulture = new RequestCulture("pt-BR");
+    options.SupportedCultures = supportedCultures;
+    options.SupportedUICultures = supportedCultures;
 });
 
 // Habilita suporte a MVC com Views (essencial para Razor funcionar)

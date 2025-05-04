@@ -2,6 +2,23 @@
     Layout = "_Layout";
 }
 
+<script>
+    $(document).ready(function () {
+        $('#Preco').on('input', function () {
+            var valor = $(this).val();
+            // Permite apenas números, ponto e vírgula
+            $(this).val(valor.replace(/[^0-9,]/g, '').replace(/(\..*?)\./g, '$1')); // Remove letras e múltiplos pontos
+        });
+
+        // Ao submeter, substitui a vírgula por ponto (para garantir que o servidor entenda como número)
+        $('form').submit(function () {
+            var preco = $('#Preco').val();
+            // Substitui a vírgula por ponto para ser aceito como número decimal
+            $('#Preco').val(preco.replace(',', '.'));
+        });
+    });
+</script>
+
 @model MBAModulo1.Core.Models.Produto
 
 <h1>@ViewData["Title"]</h1>
@@ -20,7 +37,7 @@
 
                 <div class="form-group">
                     <label asp-for="Preco" class="control-label"></label>
-                    <input asp-for="Preco" class="form-control" />
+                    <input id="Preco" name="Preco" asp-for="Preco" class="form-control" />
                     <span asp-validation-for="Preco" class="text-danger"></span>
                 </div>
 
@@ -40,7 +57,8 @@
         </div>
     </div>
 </div>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mask-plugin/1.14.16/jquery.mask.min.js"></script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

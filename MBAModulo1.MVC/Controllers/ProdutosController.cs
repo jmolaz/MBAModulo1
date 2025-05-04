@@ -89,5 +89,18 @@ namespace MBAModulo1.MVC.Controllers
             ViewBag.Categorias = new SelectList(_context.Categorias, "Id", "Nome", produto.CategoriaId);
             return View(produto);
         }
+        // GET: /Delete
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var produto = await _context.Produtos.FindAsync(id);
+            if (produto == null) return NotFound();
+
+            _context.Produtos.Remove(produto);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
