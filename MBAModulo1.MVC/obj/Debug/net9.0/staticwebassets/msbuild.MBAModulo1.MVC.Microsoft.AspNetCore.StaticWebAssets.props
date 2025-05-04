@@ -90,6 +90,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ImagensProdutos\49b04f3f-82f1-4f6b-b855-53a08f742a8e.BMP'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ImagensProdutos\4f6297dd-d41a-4ba7-9f30-8af9d53912a0.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MBAModulo1.MVC</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MBAModulo1.MVC</BasePath>
+      <RelativePath>ImagensProdutos/4f6297dd-d41a-4ba7-9f30-8af9d53912a0.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>4kfh8i0sx8</Fingerprint>
+      <Integrity>BPm4hcDAtQgoyopKJ+tIz8viQgtk76sTCf6NaUs/k+4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ImagensProdutos\4f6297dd-d41a-4ba7-9f30-8af9d53912a0.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ImagensProdutos\5d61685e-aa6b-43b2-a778-f8df05d101a6.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>MBAModulo1.MVC</SourceId>
@@ -179,6 +197,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ImagensProdutos\cf450374-7cde-4333-95d2-5851e2432c3c.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ImagensProdutos\d74803ff-0d39-411c-ba43-da9cc3bd39a4.BMP'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MBAModulo1.MVC</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MBAModulo1.MVC</BasePath>
+      <RelativePath>ImagensProdutos/d74803ff-0d39-411c-ba43-da9cc3bd39a4.BMP</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>w2qg4hi5gm</Fingerprint>
+      <Integrity>CLD1Nnp5bCcj0smvkOVhBs7mc/z+MqUoeoPPeavoYr0=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ImagensProdutos\d74803ff-0d39-411c-ba43-da9cc3bd39a4.BMP'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ImagensProdutos\f3a962a1-8f76-4027-8e6f-2069add32406.BMP'))">
       <SourceType>Package</SourceType>

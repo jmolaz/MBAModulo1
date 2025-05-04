@@ -232,3 +232,4 @@ C:\MBAModulo1\MBAModulo1.MVC\obj\Debug\net9.0\refint\MBAModulo1.MVC.dll
 C:\MBAModulo1\MBAModulo1.MVC\obj\Debug\net9.0\MBAModulo1.MVC.pdb
 C:\MBAModulo1\MBAModulo1.MVC\obj\Debug\net9.0\MBAModulo1.MVC.genruntimeconfig.cache
 C:\MBAModulo1\MBAModulo1.MVC\obj\Debug\net9.0\ref\MBAModulo1.MVC.dll
+C:\MBAModulo1\MBAModulo1.MVC\obj\Debug\net9.0\compressed\zo8xau0bes-w2qg4hi5gm.gz
